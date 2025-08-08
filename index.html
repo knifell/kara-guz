@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
@@ -12,20 +12,25 @@
     <header class="header">
         <div class="container header-container">
             <div class="logo">
-                <img src="images/logo.png" alt="Логотип" class="logo-img">
+                <img src="images/logo.png" alt="Логотип" class="logo-img" width="50" height="50">
                 <span class="logo-text">КАРА-ГУЗ</span>
             </div>
             <nav class="nav">
                 <ul class="nav-menu">
-                    <li><a href="#" class="nav-link" data-target="home">Главная</a></li>
-                    <li><a href="#" class="nav-link" data-target="about">О нас</a></li>
-                    <li><a href="#" class="nav-link" data-target="news">Новости</a></li>
-                    <li><a href="#" class="nav-link" data-target="documents">Документы</a></li>
-                    <li><a href="#" class="nav-link" data-target="appeals">Обращения</a></li>
-                    <li><a href="#" class="nav-link" data-target="gallery">Галерея</a></li>
-                    <li><a href="#" class="nav-link" data-target="contacts">Контакты</a></li>
+                    <li><a href="#home" class="nav-link" data-target="home">Главная</a></li>
+                    <li><a href="#about" class="nav-link" data-target="about">О нас</a></li>
+                    <li><a href="#news" class="nav-link" data-target="news">Новости</a></li>
+                    <li><a href="#documents" class="nav-link" data-target="documents">Документы</a></li>
+                    <li><a href="#appeals" class="nav-link" data-target="appeals">Обращения</a></li>
+                    <li><a href="#gallery" class="nav-link" data-target="gallery">Галерея</a></li>
+                    <li><a href="#contacts" class="nav-link" data-target="contacts">Контакты</a></li>
                 </ul>
             </nav>
+            <button class="menu-toggle" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </header>
 
@@ -37,7 +42,7 @@
                     <div class="home-sidebar">
                         <div class="leader-block">
                             <h3>Глава айыл окмоту</h3>
-                            <img src="images/глава_фото.jpg" alt="Фото главы" class="leader-photo">
+                            <img src="images/глава_фото.jpg" alt="Фото главы" class="leader-photo" loading="lazy" width="300" height="400">
                             <div class="leader-info">
                                 <h4>Иса уулу Нурдин</h4>
                                 <p>Глава Кара-Гуз айыл аймагы</p>
@@ -137,32 +142,32 @@
                 <div class="news-list-view">
                     <div class="news-grid">
                         <div class="news-item">
-                            <img src="https://via.placeholder.com/300x200?text=Рейд+на+джайлоо" alt="Рейд на джайлоо">
+                            <img src="https://via.placeholder.com/300x200?text=Прокуратура+и+земля" alt="Прокуратура вернула землю" loading="lazy" width="300" height="200">
                             <h3>02.06.2025: Прокуратура вернула 6 гектаров земли в муниципальную собственность.</h3>
                             <p>В ходе проверки прокуратура выявила незаконную передачу земли в крестьянское хозяйство.</p>
                             <a href="#" class="read-more-btn" data-news-id="news-1">Читать далее...</a>
                         </div>
                         <div class="news-item">
-                            <img src="https://via.placeholder.com/300x200?text=Спортзал+в+Калматай" alt="Спортзал в Калматай">
+                            <img src="https://via.placeholder.com/300x200?text=Спортзал+в+Калматай" alt="Спортзал в Калматай" loading="lazy" width="300" height="200">
                             <h3>30.05.2025: Открыт новый спортзал в селе Калматай.</h3>
                             <p>В средней школе имени К. Калматова состоялось открытие современного спортзала.</p>
                             <a href="#" class="read-more-btn" data-news-id="news-2">Читать далее...</a>
                         </div>
                         <div class="news-item">
-                            <img src="https://via.placeholder.com/300x200?text=Строительство+детсада+в+Жийде" alt="Строительство детсада в Жийде">
+                            <img src="https://via.placeholder.com/300x200?text=Строительство+детсада+в+Жийде" alt="Строительство детсада в Жийде" loading="lazy" width="300" height="200">
                             <h3>29.07.2025: В селе Жийде строят детский сад на 60 мест.</h3>
                             <p>Строительство нового двухэтажного детского сада финансируется из республиканского бюджета.</p>
                             <a href="#" class="read-more-btn" data-news-id="news-3">Читать далее...</a>
                         </div>
                         <div class="news-item">
-                            <img src="https://via.placeholder.com/300x200?text=Обвал+горной+породы" alt="Обвал горной породы">
+                            <img src="https://via.placeholder.com/300x200?text=Обвал+горной+породы" alt="Обвал горной породы" loading="lazy" width="300" height="200">
                             <h3>20.12.2024: Обвал горной породы на трассе Кара-Кульджа — Сары-Булак.</h3>
                             <p>Дорожные службы расчищают участок дороги после крупного обвала.</p>
                             <a href="#" class="read-more-btn" data-news-id="news-4">Читать далее...</a>
                         </div>
                         <div class="news-item">
-                            <img src="https://via.placeholder.com/300x200?text=Капитальный+ремонт+дороги" alt="Капитальный ремонт дороги">
-                            <h3>07.08.2025: Ремонт трассы Узген — Кара-Кульджа завершится к концу года.</h3>
+                            <img src="https://via.placeholder.com/300x200?text=Капитальный+ремонт+дороги" alt="Капитальный ремонт дороги" loading="lazy" width="300" height="200">
+                            <h3>07.08.2025: Ремонт трассы Узген — Мырза-Аке — Кара-Кульджа завершится к концу года.</h3>
                             <p>Заместитель главы кабинета министров провел инспекцию капитального ремонта дороги.</p>
                             <a href="#" class="read-more-btn" data-news-id="news-5">Читать далее...</a>
                         </div>
@@ -172,31 +177,31 @@
                 <div class="news-full-view">
                     <div id="news-1" class="full-article" style="display: none;">
                         <h3>02.06.2025: Прокуратура Кара-Кульджинского района вернула в муниципальную собственность земельный участок площадью 6 га</h3>
-                        <img src="https://via.placeholder.com/600x400?text=Рейд+на+джайлоо" alt="Рейд на джайлоо" class="full-article-photo">
+                        <img src="https://via.placeholder.com/600x400?text=Прокуратура+и+земля" alt="Прокуратура вернула землю" loading="lazy" class="full-article-photo" width="600" height="400">
                         <p>Прокуратура Кара-Кульджинского района провела проверку Кара-Кульджинского айыл окмоту, по результатам которой установлено, что земельный участок сельскохозяйственного назначения площадью 6 га был незаконно передан в собственность крестьянскому хозяйству. В связи с чем, главе Кара-Кульджинского айыл окмоту внесено представление об устранении нарушений. По итогам рассмотрения акта прокурорского реагирования земельные участки общей площадью 6 га, стоимостью 3,9 млн сомов, возвращены в муниципальную собственность.</p>
                         <button class="back-to-news-btn">Закрыть</button>
                     </div>
                     <div id="news-2" class="full-article" style="display: none;">
                         <h3>30.05.2025: Спортивный зал открыт в селе Калматай</h3>
-                        <img src="https://via.placeholder.com/600x400?text=Спортзал+в+Калматай" alt="Спортзал в Калматай" class="full-article-photo">
+                        <img src="https://via.placeholder.com/600x400?text=Спортзал+в+Калматай" alt="Спортзал в Калматай" loading="lazy" class="full-article-photo" width="600" height="400">
                         <p>В средней школе имени К. Калматова села Калматай состоялось торжественное открытие нового современного спортивного зала. Строительство объекта велось за счет средств республиканского бюджета и было завершено. Новый зал оборудован всем необходимым инвентарем и включает в себя раздевалки. Открытие зала стало большим событием для школьников и жителей села, предоставив новые возможности для занятий спортом и проведения соревнований.</p>
                         <button class="back-to-news-btn">Закрыть</button>
                     </div>
                     <div id="news-3" class="full-article" style="display: none;">
                         <h3>29.07.2025: В селе Жийде строят детский сад на 60 мест</h3>
-                        <img src="https://via.placeholder.com/600x400?text=Строительство+детсада+в+Жийде" alt="Строительство детсада в Жийде" class="full-article-photo">
+                        <img src="https://via.placeholder.com/600x400?text=Строительство+детсада+в+Жийде" alt="Строительство детсада в Жийде" loading="lazy" class="full-article-photo" width="600" height="400">
                         <p>В селе Жийде Кара-Кульджинского района продолжается строительство нового двухэтажного детского сада, рассчитанного на 60 мест. Проект, финансируемый из республиканского бюджета, начался в 2023 году. На данный момент строительно-монтажные работы выполнены на 63%. Новое дошкольное учреждение будет оборудовано в соответствии с современными стандартами и создаст комфортные условия для воспитания детей. Планируемое завершение строительства ожидается в 2026 году.</p>
                         <button class="back-to-news-btn">Закрыть</button>
                     </div>
                     <div id="news-4" class="full-article" style="display: none;">
-                        <h3>20.12.2024: Обвал горной породы в Кара-Кульдже расчищают вторую неделю</h3>
-                        <img src="https://via.placeholder.com/600x400?text=Обвал+горной+породы" alt="Обвал горной породы" class="full-article-photo">
+                        <h3>20.12.2024: Обвал горной породы на трассе Кара-Кульджа — Сары-Булак.</h3>
+                        <img src="https://via.placeholder.com/600x400?text=Обвал+горной+породы" alt="Обвал горной породы" loading="lazy" class="full-article-photo" width="600" height="400">
                         <p>На участке Кок-Жар автодороги Кара-Кульджа — Сары-Булак зарегистрировано падение горной массы объемом 12 тысяч кубометров. Дорога закрыта в обе стороны. Жители объезжают через круговую трассу. На месте работают погрузчик и экскаватор. Дорожные службы продолжают работы по расчистке завала.</p>
                         <button class="back-to-news-btn">Закрыть</button>
                     </div>
                     <div id="news-5" class="full-article" style="display: none;">
                         <h3>07.08.2025: Ремонт трассы Узген — Мырза-Аке — Кара-Кульджа завершится к концу года</h3>
-                        <img src="https://via.placeholder.com/600x400?text=Капитальный+ремонт+дороги" alt="Капитальный ремонт дороги" class="full-article-photo">
+                        <img src="https://via.placeholder.com/600x400?text=Капитальный+ремонт+дороги" alt="Капитальный ремонт дороги" loading="lazy" class="full-article-photo" width="600" height="400">
                         <p>Проект реализуется на участке протяженностью 34 км, включая два моста. Работы ведутся в три этапа. Завершение проекта запланировано на конец 2025 года. Сметная стоимость – 2.2 млрд сомов. По данным Минтранса, завершено 90–95% запланированных работ. В настоящее время продолжается укладка асфальтобетона и строительство тротуаров.</p>
                         <button class="back-to-news-btn">Закрыть</button>
                     </div>
@@ -251,10 +256,10 @@
             <section id="gallery" class="content-section" style="display: none;">
                 <h2 class="section-title">Галерея</h2>
                 <div class="gallery-grid">
-                    <img src="https://via.placeholder.com/300x200?text=Собрание+села" alt="Собрание села">
-                    <img src="https://via.placeholder.com/300x200?text=Праздник+урожая" alt="Праздник урожая">
-                    <img src="https://via.placeholder.com/300x200?text=Вид+на+горы" alt="Вид на горы">
-                    <img src="https://via.placeholder.com/300x200?text=Ремонт+дорог" alt="Ремонт дорог">
+                    <img src="https://via.placeholder.com/300x200?text=Собрание+села" alt="Собрание села" loading="lazy" width="300" height="200">
+                    <img src="https://via.placeholder.com/300x200?text=Праздник+урожая" alt="Праздник урожая" loading="lazy" width="300" height="200">
+                    <img src="https://via.placeholder.com/300x200?text=Вид+на+горы" alt="Вид на горы" loading="lazy" width="300" height="200">
+                    <img src="https://via.placeholder.com/300x200?text=Ремонт+дорог" alt="Ремонт дорог" loading="lazy" width="300" height="200">
                 </div>
             </section>
 
