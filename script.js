@@ -1,95 +1,80 @@
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
-    const contentSections = document.querySelectorAll('.content-section');
-    const cardLinks = document.querySelectorAll('.card-link');
-    const appealForm = document.getElementById('appeal-form');
-    const newsListView = document.querySelector('.news-list-view');
+    const sections = document.querySelectorAll('.content-section');
+    const newsGrid = document.querySelector('.news-list-view');
     const newsFullView = document.querySelector('.news-full-view');
     const readMoreButtons = document.querySelectorAll('.read-more-btn');
-    const backToNewsButtons = document.querySelectorAll('.back-to-news-btn');
+    const backToNewsButton = document.querySelectorAll('.back-to-news-btn');
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
 
-    function showSection(targetId) {
-        contentSections.forEach(section => {
+    // Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїРµСЂРµРєР»СЋС‡РµРЅРёСЏ РІРёРґРёРјРѕСЃС‚Рё СЃРµРєС†РёР№
+    const showSection = (targetId) => {
+        sections.forEach(section => {
             if (section.id === targetId) {
                 section.style.display = 'block';
             } else {
                 section.style.display = 'none';
             }
         });
-    }
+    };
 
+    // РћР±СЂР°Р±РѕС‚С‡РёРє РґР»СЏ РЅР°РІРёРіР°С†РёРё
     navLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const target = event.target.getAttribute('data-target');
-            showSection(target);
-            // Возвращаемся к списку новостей, если переходим на другую страницу
-            if (target !== 'news') {
-                newsListView.style.display = 'block';
-                newsFullView.style.display = 'none';
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('data-target');
+            showSection(targetId);
+
+            // Р—Р°РєСЂС‹РІР°РµРј РјРѕР±РёР»СЊРЅРѕРµ РјРµРЅСЋ РїРѕСЃР»Рµ РЅР°Р¶Р°С‚РёСЏ
+            if (navMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
             }
         });
     });
 
-    cardLinks.forEach(link => {
-        link.addEventListener('click', (event) => {
-            event.preventDefault();
-            const target = event.target.getAttribute('data-target');
-            showSection(target);
-        });
-    });
-
-    // Новая логика для отправки формы с помощью fetch
-    if (appealForm) {
-        appealForm.addEventListener('submit', function (event) {
-            event.preventDefault(); // Предотвращаем стандартную отправку формы
-
-            const formData = new FormData(this);
-
-            fetch('send_appeal.php', {
-                method: 'POST',
-                body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.status === 'success') {
-                        alert(data.message);
-                        appealForm.reset(); // Очищаем форму после успешной отправки
-                    } else {
-                        alert(data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('Ошибка:', error);
-                    alert('Произошла ошибка при отправке запроса. Пожалуйста, попробуйте еще раз.');
-                });
+    // РћР±СЂР°Р±РѕС‚С‡РёРє РґР»СЏ РєРЅРѕРїРєРё "РЎРјРѕС‚СЂРµС‚СЊ РІСЃРµ РЅРѕРІРѕСЃС‚Рё"
+    const newsCardLink = document.querySelector('.news-card .card-link');
+    if (newsCardLink) {
+        newsCardLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSection('news');
         });
     }
 
-    // Логика для показа полной новости
+    // РћР±СЂР°Р±РѕС‚С‡РёРєРё РґР»СЏ "Р§РёС‚Р°С‚СЊ РґР°Р»РµРµ..."
     readMoreButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            event.preventDefault();
-            const newsId = event.target.getAttribute('data-news-id');
-            newsListView.style.display = 'none';
-            newsFullView.style.display = 'block';
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const newsId = button.getAttribute('data-news-id');
+            const fullArticle = document.getElementById(newsId);
+
+            if (fullArticle) {
+                newsGrid.style.display = 'none';
+                newsFullView.style.display = 'block';
+                fullArticle.style.display = 'block';
+            }
+        });
+    });
+
+    // РћР±СЂР°Р±РѕС‚С‡РёРєРё РґР»СЏ РєРЅРѕРїРєРё "Р—Р°РєСЂС‹С‚СЊ"
+    backToNewsButton.forEach(button => {
+        button.addEventListener('click', () => {
+            newsGrid.style.display = 'grid';
+            newsFullView.style.display = 'none';
             document.querySelectorAll('.full-article').forEach(article => {
-                if (article.id === newsId) {
-                    article.style.display = 'block';
-                } else {
-                    article.style.display = 'none';
-                }
+                article.style.display = 'none';
             });
         });
     });
 
-    // Логика для возврата к списку новостей
-    backToNewsButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            newsFullView.style.display = 'none';
-            newsListView.style.display = 'block';
-        });
+    // РћР±СЂР°Р±РѕС‚С‡РёРє РґР»СЏ РјРѕР±РёР»СЊРЅРѕРіРѕ РјРµРЅСЋ
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
     });
 
+    // РџРѕРєР°Р·С‹РІР°РµРј РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ РїСЂРё Р·Р°РіСЂСѓР·РєРµ
     showSection('home');
 });
